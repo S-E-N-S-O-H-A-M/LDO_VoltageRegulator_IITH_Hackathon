@@ -46,7 +46,7 @@ The proposed LDO regulator circuit was constructed in Synopsys Custom Design Pla
 &emsp;The Synopsys 28nm Process Design Kit(PDK) was used in creation and simulation of the above designed circuit.
 
 
-# Schematics:
+# Schematic:
 
 ![schematic_trans](https://user-images.githubusercontent.com/65547096/155890726-c85a34c5-3340-40aa-9579-15e5285fc648.PNG)
 
