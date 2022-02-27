@@ -65,6 +65,10 @@ The proposed LDO regulator circuit was constructed in Synopsys Custom Design Pla
 
 ![dc_analysis_parameters](https://user-images.githubusercontent.com/65547096/155854514-e257b45e-fa58-4928-ac2a-5c215af5bfa1.PNG)
 
+### PrimeWave Window
+
+![prime_wave_VoutVsVin](https://user-images.githubusercontent.com/65547096/155883816-41f7c6e8-259a-4e64-a5a8-715d65ec39a2.PNG)
+
 ### NetList
 
 ```
@@ -132,8 +136,9 @@ r13 vout net45 r=60k
 .end
 ```
 
-### Output Vs Input Voltage 
+### Testbench Waveform
 
+The Output Vs Input Voltage of this schematic is as shown below:
 ![VinVsVoutWaveform](https://user-images.githubusercontent.com/65547096/155853093-e612dd5f-217e-4308-93c6-f22bf9399198.PNG)
 
 ## Transient Analysis
@@ -153,6 +158,10 @@ r13 vout net45 r=60k
 ### Transient Analysis Settings
 
 ![transient_analysis](https://user-images.githubusercontent.com/65547096/155854507-f5d18e67-3cc7-4786-a431-59d1d6e40c3d.PNG)
+
+### PrimeWave Window
+
+![prime_wave_quiscent](https://user-images.githubusercontent.com/65547096/155883658-8257accd-dac9-4271-b3b0-0c045f308d1e.PNG)
 
 ### NetList
 
@@ -220,8 +229,9 @@ r13 vout net45 r=60k
 .end
 ```
 
-### Ouiescent Current
+### Testbench Waveform
 
+The Ouiescent Current of this schematic is as shown below:
 ![QUIESCENT_CURRENT](https://user-images.githubusercontent.com/65547096/155853110-7623fa09-e8fa-47a0-8af2-fbe1a61ad2fc.PNG)
 
 
@@ -242,6 +252,10 @@ r13 vout net45 r=60k
 ### AC Analysis Settings
 
 ![AC_ANALYSIS](https://user-images.githubusercontent.com/65547096/155854856-5809e17c-db5e-4475-b357-d5a4786e5d0c.PNG)
+
+### PrimeWave Window
+
+![Prime_wave_Pssr](https://user-images.githubusercontent.com/65547096/155883623-fb7db3f3-37c8-4b26-a7ce-dea93def2daa.PNG)
 
 ### NetList
 
@@ -309,8 +323,9 @@ v24 vin gnd! dc=0 ac=1.8 sin ( 0 0 1000000 0 0 0 )
 .end
 ```
 
-### PSSR
+### Testbench Waveform
 
+The PSSR of this schematic is as shown below:
 ![PSSR_WAVE](https://user-images.githubusercontent.com/65547096/155853401-e06efba8-e6ad-4f73-80ca-330857d0be71.PNG)
 
 
