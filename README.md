@@ -4,9 +4,7 @@ This repository presents the design of Low Dropout Voltage Regulator using Synop
 
 # Table of Contents
  * [Abstract](#Abstract)
- * [Refrence Circuit Details](#Circuit-Details)
- * [Reference Circuit Diagram](#Circuit-Diagram)
- * [Reference Circuit Waveforms](#Circuit-Waveforms)
+ * [Circuit Details](#Circuit-Details)
  * [Tools Used](#Tools-Used)
  * [LDO Voltage Regulator](#LDO-Voltage-Regulator)
  * [Schematic](#Schematic)
@@ -23,19 +21,10 @@ This repository presents the design of Low Dropout Voltage Regulator using Synop
 The paper constitutes the design and analysis of a Low Dropout Voltage Regulator.  A low-dropout (LDO) transformer is the main component utilized in the bulk of portable electronic applications since it's used as a power management unit in those applications. In this paper, an LDO regulator for the power management microcircuit in 28m CMOS technology using Synopsys Custom Design Platform is presented. The error amplifier of the proposed LDO employed seven transistors for the current mirror. Meanwhile, the PMOS transistor is employed as a pass element transistor to control the voltage variation. The resistors are used as a feedback network circuit while the capacitor is employed to minimise the variation of output voltage.
 
 
-# ReferenceCircuit Details:
+# Circuit Details:
 The proposed LDO regulator circuit was constructed in Synopsys Custom Design Platform. Figure 1 shows the schematic of the proposed LDO regulator. In the schematic diagram, the error amplifier is constructed by three PMOS transistors and five NMOS transistors. The transistors M0 to M7 are used to form the current mirror circuit. The function of the current mirror structure will ensure each line of wire able to get the same current level in this design. All the transistors are using 28nm technology size. Based on the proposed design, a PMOS transistor M8 is used as a pass element transistor to control the voltage from the input to the output differential voltage. The main reason is the PMOS transistor is voltage-driven and does not require much current, thus greatly reducing the current consumed by the device itself. In addition, the voltage drop across the PMOS transistor is similar to the product of the output current and the on-resistance. The resistors R1 and R2 are used as a voltage divider network or feedback circuit. The feedback circuit structure can generate a feedback voltage into an error amplifier. The capacitor (Cload) is used as a stabilizer to stabilize the output voltage and the load resistor (Rload) is 10 kΩ.
 
-
-# Reference Circuit Details:
 ![paper_1](https://user-images.githubusercontent.com/65547096/155827445-7f1c7868-ee12-4118-ab25-0541da5826d0.PNG)
-
-
-
-# Reference Circuit Waveforms:
-![paper_2](https://user-images.githubusercontent.com/65547096/155827697-90b5a6ef-4c39-493f-8dca-d9a3874631cc.PNG)
-![paper_3](https://user-images.githubusercontent.com/65547096/155827706-c4275310-3e32-415c-93db-02599021b259.PNG)
-![paper_4](https://user-images.githubusercontent.com/65547096/155827708-8b7ede25-4763-4508-b105-3e33d5170235.PNG)
 
 
 # Tools Used:
