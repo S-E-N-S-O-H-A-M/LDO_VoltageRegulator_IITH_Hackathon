@@ -41,7 +41,7 @@ The proposed LDO regulator circuit was constructed in Synopsys Custom Design Pla
 
 # Schematics:
 
-![Schematic_2](https://user-images.githubusercontent.com/65547096/155853206-30500b8b-e55f-4aed-bddc-eba83a82749e.PNG)
+![schematic_trans](https://user-images.githubusercontent.com/65547096/155890726-c85a34c5-3340-40aa-9579-15e5285fc648.PNG)
 
 
 # Simulations:
@@ -51,11 +51,11 @@ The proposed LDO regulator circuit was constructed in Synopsys Custom Design Pla
 
 ### Schematic
 
-![VinVsVoutCkt](https://user-images.githubusercontent.com/65547096/155853007-932cb88b-dd7d-4aa5-8419-59b0c439aace.PNG)
+![schematic_dc](https://user-images.githubusercontent.com/65547096/155889999-091ea49f-ab68-48ee-80cd-8599813f4988.PNG)
 
 ### Parameters set for Voltage Source for Input Vin
 
-![dc_para_1](https://user-images.githubusercontent.com/65547096/155854389-40f3b2a8-d302-4e3c-a713-b73ebe98a04b.PNG)
+![vin_dc](https://user-images.githubusercontent.com/65547096/155890057-4dcd0092-1fc9-49b9-911a-6a0f3f654923.PNG)
 
 ### Parameters set for Voltage Source for Input Vref
 
@@ -67,7 +67,7 @@ The proposed LDO regulator circuit was constructed in Synopsys Custom Design Pla
 
 ### PrimeWave Window
 
-![prime_wave_VoutVsVin](https://user-images.githubusercontent.com/65547096/155883816-41f7c6e8-259a-4e64-a5a8-715d65ec39a2.PNG)
+![prime_wave_dc](https://user-images.githubusercontent.com/65547096/155890870-c39ae6db-4c35-4af5-814c-aacfb2929f8b.PNG)
 
 ### NetList
 
@@ -79,7 +79,7 @@ The proposed LDO regulator circuit was constructed in Synopsys Custom Design Pla
 .lib 'saed32nm.lib' TT
 .param vs=1.8
 *Custom Compiler Version S-2021.09
-*Sat Feb 26 17:45:45 2022
+*Sun Feb 27 16:29:12 2022
 
 .global gnd!
 ********************************************************************************
@@ -89,19 +89,19 @@ The proposed LDO regulator circuit was constructed in Synopsys Custom Design Pla
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-xm3 vout net33 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm2 net33 net21 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm1 net21 net50 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm0 net50 net50 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm8 net33 vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm7 vin vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm6 net58 vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm5 net21 net45 net58 net58 n105 w=0.1u l=0.03u nf=1 m=1
-xm4 net50 vref net58 net58 n105 w=0.1u l=0.03u nf=1 m=1
+xm3 vout net33 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm2 net33 net21 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm1 net21 net50 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm0 net50 net50 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm8 net33 vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm7 vin vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm6 net58 vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm5 net21 net45 net58 net58 n105 w=0.42u l=0.5u nf=1 m=1
+xm4 net50 vref net58 net58 n105 w=0.42u l=0.5u nf=1 m=1
+v25 vin gnd! dc='vs'
 v19 vref gnd! dc=0.5
-v18 vin gnd! dc='vs'
 c12 vout gnd! c=50p
-r15 vout gnd! r=10k
+r26 vout gnd! r=10k
 r14 net45 gnd! r=100k
 r13 vout net45 r=60k
 
@@ -134,18 +134,19 @@ r13 vout net45 r=60k
 
 
 .end
+
 ```
 
 ### Testbench Waveform
 
 The Output Vs Input Voltage of this schematic is as shown below:
-![VinVsVoutWaveform](https://user-images.githubusercontent.com/65547096/155853093-e612dd5f-217e-4308-93c6-f22bf9399198.PNG)
+![graph_dc](https://user-images.githubusercontent.com/65547096/155890800-d2aabf71-eb4b-476a-b3d6-77175d322160.PNG)
 
 ## Transient Analysis
 
 ### Schematic
 
-![Schematic_2](https://user-images.githubusercontent.com/65547096/155853206-30500b8b-e55f-4aed-bddc-eba83a82749e.PNG)
+![schematic_trans](https://user-images.githubusercontent.com/65547096/155890713-1dac9c19-f8fe-4422-92ab-9027107e178b.PNG)
 
 ### Parameters set for Voltage Source for Input Vin
 
@@ -161,7 +162,7 @@ The Output Vs Input Voltage of this schematic is as shown below:
 
 ### PrimeWave Window
 
-![prime_wave_quiscent](https://user-images.githubusercontent.com/65547096/155883658-8257accd-dac9-4271-b3b0-0c045f308d1e.PNG)
+![prime_wave_trans](https://user-images.githubusercontent.com/65547096/155890689-9e184180-2801-465d-9d4f-99c38360a221.PNG)
 
 ### NetList
 
@@ -173,7 +174,7 @@ The Output Vs Input Voltage of this schematic is as shown below:
 .lib 'saed32nm.lib' TT
 
 *Custom Compiler Version S-2021.09
-*Sat Feb 26 18:18:59 2022
+*Sun Feb 27 16:23:38 2022
 
 .global gnd!
 ********************************************************************************
@@ -183,19 +184,19 @@ The Output Vs Input Voltage of this schematic is as shown below:
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-xm3 vout net33 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm2 net33 net21 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm1 net21 net50 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm0 net50 net50 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm8 net33 vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm7 vin vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm6 net58 vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm5 net21 net45 net58 net58 n105 w=0.1u l=0.03u nf=1 m=1
-xm4 net50 vref net58 net58 n105 w=0.1u l=0.03u nf=1 m=1
+xm3 vout net33 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm2 net33 net21 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm1 net21 net50 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm0 net50 net50 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm8 net33 vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm7 vin vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm6 net58 vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm5 net21 net45 net58 net58 n105 w=0.42u l=0.5u nf=1 m=1
+xm4 net50 vref net58 net58 n105 w=0.42u l=0.5u nf=1 m=1
+v25 vin gnd! dc=1.8
 v19 vref gnd! dc=0.5
-v18 vin gnd! dc=1.8
 c12 vout gnd! c=50p
-r15 vout gnd! r=10k
+r26 vout gnd! r=10k
 r14 net45 gnd! r=100k
 r13 vout net45 r=60k
 
@@ -210,7 +211,7 @@ r13 vout net45 r=60k
 
 .option primesim_remove_probe_prefix = 0
 .probe v(*) i(*) level=1
-.probe tran i(r15) i(v18)
+.probe tran i(r26) i(v25)
 
 .temp 25
 
@@ -227,23 +228,24 @@ r13 vout net45 r=60k
 
 
 .end
+
 ```
 
 ### Testbench Waveform
 
 The Ouiescent Current of this schematic is as shown below:
-![QUIESCENT_CURRENT](https://user-images.githubusercontent.com/65547096/155853110-7623fa09-e8fa-47a0-8af2-fbe1a61ad2fc.PNG)
+![graph_trans](https://user-images.githubusercontent.com/65547096/155890637-c44b5140-ad25-4d2a-aa10-9639293bade8.PNG)
 
 
 ## AC Analysis
 
 ### Schematic
 
-![PSSR_CKT](https://user-images.githubusercontent.com/65547096/155853014-e9792a4c-72ab-492a-92c3-d3bf0e1575fc.PNG)
+![schematic_ac](https://user-images.githubusercontent.com/65547096/155891191-31257b2a-f48f-4731-9d67-3c0af9323ec3.PNG)
 
 ### Parameters set for Voltage Source for Input Vin
 
-![AC_PARA_1](https://user-images.githubusercontent.com/65547096/155855780-b7805380-070f-47fe-83db-8f7e5177c8f0.PNG)
+![vin_ac](https://user-images.githubusercontent.com/65547096/155891243-de191469-b2fe-4372-b7a4-be06b25ee25f.PNG)
 
 ### Parameters set for Voltage Source for Input Vref
 
@@ -251,11 +253,11 @@ The Ouiescent Current of this schematic is as shown below:
 
 ### AC Analysis Settings
 
-![AC_ANALYSIS](https://user-images.githubusercontent.com/65547096/155854856-5809e17c-db5e-4475-b357-d5a4786e5d0c.PNG)
+![ac_settings](https://user-images.githubusercontent.com/65547096/155891147-6ca9d8c9-8cbe-4547-827e-4b62ea7a7b4e.PNG)
 
 ### PrimeWave Window
 
-![Prime_wave_Pssr](https://user-images.githubusercontent.com/65547096/155883623-fb7db3f3-37c8-4b26-a7ce-dea93def2daa.PNG)
+![prime_wave_ac](https://user-images.githubusercontent.com/65547096/155891135-c2e9bb5a-acde-4e16-9350-f63299114eb3.PNG)
 
 ### NetList
 
@@ -267,7 +269,7 @@ The Ouiescent Current of this schematic is as shown below:
 .lib 'saed32nm.lib' TT
 
 *Custom Compiler Version S-2021.09
-*Sat Feb 26 18:57:00 2022
+*Sun Feb 27 16:36:31 2022
 
 .global gnd!
 ********************************************************************************
@@ -277,21 +279,21 @@ The Ouiescent Current of this schematic is as shown below:
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-xm3 vout net33 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm2 net33 net21 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm1 net21 net50 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm0 net50 net50 vin vin p105 w=0.1u l=0.03u nf=1 m=1
-xm8 net33 vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm7 vin vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm6 net58 vin gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm5 net21 net45 net58 net58 n105 w=0.1u l=0.03u nf=1 m=1
-xm4 net50 vref net58 net58 n105 w=0.1u l=0.03u nf=1 m=1
+xm3 vout net33 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm2 net33 net21 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm1 net21 net50 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm0 net50 net50 vin vin p105 w=3u l=0.5u nf=1 m=1
+xm8 net33 vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm7 vin vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm6 net58 vin gnd! gnd! n105 w=0.42u l=0.5u nf=1 m=1
+xm5 net21 net45 net58 net58 n105 w=0.42u l=0.5u nf=1 m=1
+xm4 net50 vref net58 net58 n105 w=0.42u l=0.5u nf=1 m=1
 v19 vref gnd! dc=0.5
 c12 vout gnd! c=50p
-r15 vout gnd! r=10k
+r26 vout gnd! r=10k
 r14 net45 gnd! r=100k
 r13 vout net45 r=60k
-v24 vin gnd! dc=0 ac=1.8 sin ( 0 0 1000000 0 0 0 )
+v28 vin gnd! dc=0 ac=1.8 sin ( 0 0 60 0 0 0 )
 
 
 
@@ -300,7 +302,7 @@ v24 vin gnd! dc=0 ac=1.8 sin ( 0 0 1000000 0 0 0 )
 
 
 
-.ac dec '10' '0.1' '1000000000' name=ac
+.ac dec '10' '0.1' '10000000' name=ac
 
 .option primesim_remove_probe_prefix = 0
 .probe v(*) i(*) level=1
@@ -326,7 +328,7 @@ v24 vin gnd! dc=0 ac=1.8 sin ( 0 0 1000000 0 0 0 )
 ### Testbench Waveform
 
 The PSSR of this schematic is as shown below:
-![PSSR_WAVE](https://user-images.githubusercontent.com/65547096/155853401-e06efba8-e6ad-4f73-80ca-330857d0be71.PNG)
+![wave_ac](https://user-images.githubusercontent.com/65547096/155891121-6b9e0449-a27a-4335-8827-bc5057401d8d.PNG)
 
 
 # Author:
