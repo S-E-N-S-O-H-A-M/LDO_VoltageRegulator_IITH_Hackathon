@@ -345,5 +345,6 @@ The PSSR of this schematic is as shown below:
 • Active and vibrant hackathon community
 
 # References:
-1.  <a href='https://cutt.ly/oPmF0f0'>S.A.Z Murad. Design of CMOS Low-Dropout Voltage Regulator for Power Management Integrated Circuit in 0.18-µm Technology.</a><br>
-2.	<a href='https://cutt.ly/InNnZPb'>N. H. E. Weste. Cmos vlsi design : A circuits and sys- tems perspective.</a><br>
+1. <a href='https://cutt.ly/oPmF0f0'>S.A.Z Murad. Design of CMOS Low-Dropout Voltage Regulator for Power Management Integrated Circuit in 0.18-µm Technology.</a><br>
+2. <a href=">Lantao Wang. A Low-noise Low-Dropout Regulator Using a 28-nm Technology.</a><br>
+3.	<a href='https://cutt.ly/InNnZPb'>N. H. E. Weste. Cmos vlsi design : A circuits and sys- tems perspective.</a><br>
